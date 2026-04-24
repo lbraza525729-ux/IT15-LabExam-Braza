@@ -1,0 +1,36 @@
+@model IT15_LabExam_Braza.Models.Employee
+
+<div class="card">
+
+    <div class="title">Edit Employee</div>
+    <div class="subtitle">Update employee details</div>
+
+    <br />
+
+    <form method="post">
+
+        <input type="hidden" asp-for="EmployeeID" />
+
+        <label>First Name</label>
+        <input asp-for="FirstName" class="input" />
+
+        <label>Last Name</label>
+        <input asp-for="LastName" class="input" />
+
+        <label>Position</label>
+        <input asp-for="Position" class="input" />
+
+        <label>Department</label>
+        <input asp-for="Department" class="input" />
+
+        <label>Daily Rate</label>
+        <input asp-for="DailyRate" class="input" />
+
+        <br /><br />
+
+        <button type="submit" class="btn success">Update</button>
+        <a href="/Employees" class="btn primary">Back</a>
+
+    </form>
+
+</div>

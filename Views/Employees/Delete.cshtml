@@ -1,0 +1,22 @@
+@model IT15_LabExam_Braza.Models.Employee
+
+<div class="card">
+
+    <div class="title">Delete Employee</div>
+    <div class="subtitle">Are you sure you want to delete this?</div>
+
+    <br />
+
+    <p><b>Name:</b> @Model.FirstName @Model.LastName</p>
+    <p><b>Position:</b> @Model.Position</p>
+
+    <form method="post">
+
+        <input type="hidden" asp-for="EmployeeID" />
+
+        <button type="submit" class="btn danger">Delete</button>
+        <a href="/Employees" class="btn primary">Cancel</a>
+
+    </form>
+
+</div>

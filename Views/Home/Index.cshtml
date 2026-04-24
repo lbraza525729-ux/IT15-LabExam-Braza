@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="card">
+
+    <div class="title">HR Dashboard</div>
+    <div class="subtitle">Welcome to TechCore HR System</div>
+
+    <br />
+
+    <div style="margin-bottom:20px;">
+        <a href="/Employees/Create" class="btn success">+ Add Employee</a>
+        <a href="/Employees" class="btn primary">View Employees</a>
+    </div>
+
+</div>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>Total Employees</h3>
+        <h1>@ViewBag.TotalEmployees</h1>
+    </div>
+
+    <div class="card">
+        <h3>Total Payroll Records</h3>
+        <h1>@ViewBag.TotalPayroll</h1>
+    </div>
+
+    <div class="card">
+        <h3>Status</h3>
+        <h1 style="color:green;">Active</h1>
+    </div>
+
+</div>

@@ -1,0 +1,34 @@
+@model IT15_LabExam_Braza.Models.Payroll
+
+<div class="card">
+
+    <div class="title">Add Payroll</div>
+    <div class="subtitle">Create payroll record</div>
+
+    <br />
+
+    <div style="margin-bottom:10px;">
+        <b>Employee ID:</b> @ViewBag.EmployeeId
+    </div>
+
+    <form method="post">
+
+        <input type="hidden" name="EmployeeID" value="@ViewBag.EmployeeId" />
+
+        <label>Date</label>
+        <input name="Date" type="date" class="input" />
+
+        <label>Days Worked</label>
+        <input name="DaysWorked" type="number" class="input" />
+
+        <label>Deduction</label>
+        <input name="Deduction" type="number" step="0.01" class="input" />
+
+        <br />
+
+        <button class="btn success">Save Payroll</button>
+        <a href="/Payroll?employeeId=@ViewBag.EmployeeId" class="btn primary">Back</a>
+
+    </form>
+
+</div>

@@ -1,0 +1,52 @@
+@model IEnumerable<IT15_LabExam_Braza.Models.Payroll>
+
+<div class="card">
+
+    <div class="title">Payroll Records</div>
+    <div class="subtitle">
+        Employee: <b>@ViewBag.EmployeeName</b>
+    </div>
+
+    <br />
+
+    <a class="btn success" href="/Payroll/Create?employeeId=@ViewBag.EmployeeId">
+        + Add Payroll
+    </a>
+
+</div>
+
+<div class="card">
+    <h3>This Month Total Salary</h3>
+    <h1 style="color:green;">
+        ₱@(Convert.ToDecimal(ViewBag.MonthlyTotal ?? 0).ToString("F2"))
+    </h1>
+</div>
+
+<div class="card">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Days</th>
+                <th>Gross</th>
+                <th>Deduction</th>
+                <th>Net</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Date.ToString("MMM dd, yyyy")</td>
+                <td>@p.DaysWorked</td>
+                <td>₱@p.GrossPay.ToString("F2")</td>
+                <td>₱@p.Deduction.ToString("F2")</td>
+                <td><b>₱@p.NetPay.ToString("F2")</b></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>

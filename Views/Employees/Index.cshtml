@@ -1,0 +1,44 @@
+@model IEnumerable<IT15_LabExam_Braza.Models.Employee>
+
+<div class="card">
+
+    <div class="title">Employees</div>
+    <div class="subtitle">Manage employee records</div>
+
+    <br />
+
+    <a href="/Employees/Create" class="btn success">+ Add Employee</a>
+
+    <br /><br />
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Rate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FirstName @item.LastName</td>
+                <td>@item.Position</td>
+                <td>@item.Department</td>
+                <td>₱@item.DailyRate.ToString("F2")</td>
+
+                <td>
+                    <a class="btn primary" href="/Employees/Edit/@item.EmployeeID">Edit</a>
+                    <a class="btn danger" href="/Employees/Delete/@item.EmployeeID">Delete</a>
+                    <a class="btn success" href="/Payroll/Index?employeeId=@item.EmployeeID">Payroll</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>
